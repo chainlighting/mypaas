@@ -2,7 +2,7 @@ mypass
 ======
 This project will make it easy to build your private PAAS environment.
 
-#### toolsBox
+## toolsBox
 1. Virtual Box 5.0.20 r106931
 
   * use virtualbox as our IAAS' machine.
@@ -55,7 +55,8 @@ This project will make it easy to build your private PAAS environment.
     docker info
     ```
 
-#### working environment
+## working environment
+
     registry(https://index.docker.io/v1/)-----------registry-mirror(https://*your-id*.mirror.aliyuncs.com)
        |                                                    |
        |____________________external________________________|
@@ -80,15 +81,16 @@ This project will make it easy to build your private PAAS environment.
 
 
 1. set the docker-engine's mirro registry
+
     *registry* supply the image-meta, *registry mirror* supply the image. **when registry down, docker-image can be downloaded?**
     
     1.1 aliyun docker mirror site
 
-    register your account on https://dev.aliyun.com, on page: *https://dev.aliyun.com/search.html*, you will get how to set mirror in *special linux distribution*.
+        register your account on https://dev.aliyun.com, on page: *https://dev.aliyun.com/search.html*, you will get how to set mirror in *special linux distribution*.
 
 2. create a *private registry container*
 
-#### paas management
+## mypaas management
     * use **rancher** to manage our cluster infrastructure. 
     * use **swarm** to shecdule all our docker supply.
 
