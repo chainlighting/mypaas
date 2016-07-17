@@ -95,6 +95,7 @@ This project will make it easy to build your private PAAS environment.
 2. create a private registry
 
 ## management
+
 * use **rancher** to manage our cluster infrastructure. 
 * use **swarm** to shecdule all our docker supply.
 
