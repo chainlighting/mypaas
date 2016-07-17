@@ -55,7 +55,7 @@ This project will make it easy to build your private PAAS environment.
     docker info
     ```
 
-## working environment
+## environment
 
     registry(https://index.docker.io/v1/)-----------registry-mirror(https://*your-id*.mirror.aliyuncs.com)
        |                                                    |
@@ -82,19 +82,25 @@ This project will make it easy to build your private PAAS environment.
 
 1. set the docker-engine's mirro registry
 
-    *registry* supply the image-meta, *registry mirror* supply the image. **when registry down, docker-image can be downloaded?**
+    *registry* supply the image-meta, *registry mirror* supply the image.
+
+    *when registry down, docker-image can be downloaded?*
     
-    1.1 aliyun docker mirror site
+    * use aliyun docker mirror site
 
-        register your account on https://dev.aliyun.com, on page: *https://dev.aliyun.com/search.html*, you will get how to set mirror in *special linux distribution*.
+        register your account on https://dev.aliyun.com.
 
-2. create a *private registry container*
+        on page: https://dev.aliyun.com/search.html, you will get how to set mirror in *special linux distribution*.
 
-## mypaas management
-    * use **rancher** to manage our cluster infrastructure. 
-    * use **swarm** to shecdule all our docker supply.
+2. create a private registry
 
-1. start rancher server on *docker container*
+## management
+* use **rancher** to manage our cluster infrastructure. 
+* use **swarm** to shecdule all our docker supply.
+
+#### start rancher
+
+#### start swarm
 
     
     
