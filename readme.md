@@ -84,10 +84,6 @@ This project will make it easy to build your private PAAS environment.
                                                                  |
                                                                  V
                                                           [Export Service]
-            
-
-
-
 
 
 1. set the docker-engine's mirro registry
@@ -104,14 +100,19 @@ This project will make it easy to build your private PAAS environment.
 
 2. create a private registry
 
-## management
+## Management
+create/delete/start/stop/monitor the container and build a working service production by containers.
 
 * use **rancher** to manage our cluster infrastructure. 
-* use **swarm** to shecdule all our docker supply.
+* use **swarm** to compose all our docker supply.
 
 #### start rancher
 
 #### start swarm
+
+## Build
+build a special docker image for special user-case and then import it to MyPaas.
+
 
     
     
