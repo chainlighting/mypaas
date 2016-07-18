@@ -1,8 +1,8 @@
-mypass
+MyPaas
 ======
 This project will make it easy to build your private PAAS environment.
 
-## toolsBox
+## ToolsBox
 1. Virtual Box 5.0.20 r106931
 
   * use virtualbox as our IAAS' machine.
@@ -55,29 +55,39 @@ This project will make it easy to build your private PAAS environment.
     docker info
     ```
 
-## environment
+## Deployment
 
-    registry(https://index.docker.io/v1/)-----------registry-mirror(https://*your-id*.mirror.aliyuncs.com)
-       |                                                    |
-       |____________________external________________________|
-                                ^
-                                |
-                                |
-                            internal
-                                |
-                                V
-                     <----first level images<------------------>private registry(http://hostip:5000)----->
-                                |                                        |
-                                |                                        |
-                                V                                        V
-                            containers                               containers
-                                |                                        |
-                                |                                        |
-                                |________________________________________|
+                     Registry[https://index.docker.io/v1/)-----------Registry-mirror(https://*your-id*.mirror.aliyuncs.com)
+                        |                                                    |
+                        |________________________external____________________|
                                                     |
                                                     |
-                                                    V
-                                             container swarm(rancher/swarm、user container)
+                                             MyPaas Manager(paas enabler)
+                                                    |
+                        ----------------------------|-------------------------------------------------
+                        |                           |                        |                       |
+                 MyPaas Registry              MyPaas Composer            MyPaas Monitor        MyPaas Iaas Driver
+                        |                           |                        |                       |
+                        |                     (K8S/Swarm...)                 |            (RawMachine/OpenStack/VMWare....)
+                        |                           |                        |                       |     
+                        V                           V                        V                       V
+                 [Supply Images]              [Supply Container]       [Monitor&Schedule]       [Supply Host&Store]
+                        |                           |                        |                       |
+                        |-----------attach--------->|------------------------|-------------attach--->|
+                                                    |                        |                       |
+                                                    |                        |-----monitor&schedule->|
+                                                    |<---monitor&schedule----|                       |
+                                                                             |                       |
+                                                                             |                       V 
+                                                                             |-----M&S------->[Supply Service]
+                                                                             |
+                                                                             |
+                                                                             V
+                                                                      [Export Service]
+                        
+
+
+
 
 
 1. set the docker-engine's mirro registry
