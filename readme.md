@@ -84,10 +84,6 @@ This project will make it easy to build your private PAAS environment.
                                                                  |
                                                                  V
                                                           [Export Service]
-            
-
-
-
 
 
 1. set the docker-engine's mirro registry
