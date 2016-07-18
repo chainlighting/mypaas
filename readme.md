@@ -113,6 +113,25 @@ create/delete/start/stop/monitor the container and build a working service produ
 ## Build
 build a special docker image for special user-case and then import it to MyPaas.
 
+1. build image from host
+
+    package system file by **tar**,output file can be *.tar, .tar.gz, .tgz, .bzip, .tar.xz, or .txz*
+    ```
+    # tar --numeric-owner --exclude=/proc --exclude=/sys -zcvf ubuntu-base.tar.gz /
+    ```
+
+    import packaged tar to **docker images**
+    ```
+    # cat ubuntu=base.tar.gz|docker import - YourRepName/ubuntu-base:v0.0.1
+    ```
+
+    when imported,you can run it
+    ```
+    # docker run -it YourRepName/ubuntu-base:v0.0.1 cat /etc/issue
+    ```
+    
+2.
+
 
     
     
